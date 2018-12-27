@@ -197,7 +197,7 @@ namespace RobotWang
         public void Send(IntPtr intPtr)
         {
             User32API.SetForegroundWindow(intPtr);//把找到的的对话框在最前面显示如果使用了这个方法
-            //User32API.ShowWindow(intPtr, ShowWindowCmd.SW_SHOWNORMAL);
+            User32API.ShowWindow(intPtr, ShowWindowCmd.SW_SHOWNORMAL);
             User32API.SendMessageA(intPtr, WM_PASTE, 0, 0);
             User32API.SendMessageA(intPtr, WM_KEYDOWN, 0X0D, 0);//发
             User32API.SendMessageA(intPtr, WM_KEYUP, 0X0D, 0); //送
